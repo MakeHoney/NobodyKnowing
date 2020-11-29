@@ -18,10 +18,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun isNotificationPermissionAllowed(): Boolean {
-        val notificationListenerSet = NotificationManagerCompat.getEnabledListenerPackages(this)
-        val myPackageName = packageName
-
-        return notificationListenerSet.contains(myPackageName)
-    }
+    private fun isNotificationPermissionAllowed(): Boolean = NotificationManagerCompat.getEnabledListenerPackages(this).contains(packageName)
 }
