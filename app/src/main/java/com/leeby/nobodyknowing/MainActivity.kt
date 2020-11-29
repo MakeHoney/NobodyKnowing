@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (isNotificationPermissionAllowed()) {
+        if (!isNotificationPermissionAllowed()) {
             // notification 퍼미션 권한 요구 액티비티 시작
             val intent = Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS")
             startActivity(intent)
