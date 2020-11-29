@@ -8,9 +8,9 @@ import android.util.Log
 class NobodyKnowingNotificationListenerService : NotificationListenerService() {
     override fun onNotificationPosted(sbn: StatusBarNotification?) {
         sbn?.notification?.extras?.let {
-            Log.i("NotificationListener", "[NobodyKnowing] onNotificationPosted() - ${sbn.toString()}")
-            Log.i("NotificationListener", "[NobodyKnowing] PackageName: ${sbn?.packageName}")
-            Log.i("NotificationListener", "[NobodyKnowing] PostTime: ${sbn?.postTime}")
+            Log.i("NotificationListener", "[NobodyKnowing] onNotificationPosted() - $sbn")
+            Log.i("NotificationListener", "[NobodyKnowing] PackageName: ${sbn.packageName}")
+            Log.i("NotificationListener", "[NobodyKnowing] PostTime: ${sbn.postTime}")
 
             val title = it.getString(Notification.EXTRA_TITLE)
             val text = it.getCharSequence(Notification.EXTRA_TEXT)
